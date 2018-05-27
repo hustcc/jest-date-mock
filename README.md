@@ -70,6 +70,9 @@ Add that file to your `setupFiles` array:
 
 > Use the only `2 api` for test cases.
 
+ - `advance(ms)`: advance date timestamp by `ms`.
+ - `reset([timestamp])`: reset date to `timestamp`, default to `0`.
+
 ```js
 import { advance, reset } from 'jest-date-mock';
 
