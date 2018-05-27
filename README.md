@@ -86,6 +86,8 @@ test('usage', () => {
 });
 ```
 
+More sample code [here](__tests__).
+
 
 ## License
 
