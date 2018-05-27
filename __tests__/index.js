@@ -43,7 +43,7 @@ describe('jest-date-mock', () => {
   test('Date.current', () => {
     advanceTo();
     expect(Date.now()).toBe(0);
-    expect(Date.current() - new Date('2018-05-20').getTime()).toBePositive();
+    expect(Date.current() - new Date('2018-05-20') > 0).toBe(true);
   });
 
   test('advanceTo', () => {

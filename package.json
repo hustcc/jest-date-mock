@@ -31,14 +31,12 @@
     "babel-jest": "^22.0.4",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
-    "jest": "^21.2.1",
-    "jest-expect": "^0.0.1"
+    "jest": "^21.2.1"
   },
   "jest": {
     "collectCoverage": true,
     "setupFiles": [
       "./src/index.js"
-    ],
-    "setupTestFrameworkScriptFile": "jest-expect"
+    ]
   }
 }
