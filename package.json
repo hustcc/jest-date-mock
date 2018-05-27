@@ -1,0 +1,42 @@
+{
+  "name": "jest-date-mock",
+  "version": "1.0.0",
+  "description": "Mock `window.Date` when run unit test cases with jest. Make tests of `Date` easier.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "babel src --out-dir lib",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hustcc/jest-date-mock.git"
+  },
+  "keywords": [
+    "mock",
+    "jest",
+    "jest-date",
+    "Date",
+    "datetime",
+    "timestamp"
+  ],
+  "author": "hustcc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hustcc/jest-date-mock/issues"
+  },
+  "homepage": "https://github.com/hustcc/jest-date-mock#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
+    "jest": "^21.2.1"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "setupFiles": [
+      "./src/index.js"
+    ]
+  }
+}
