@@ -21,7 +21,7 @@ npm i --save-dev jest-date-mock
 
 In your `package.json` under the `jest`, create a `setupFiles` array and add `jest-date-mock` to the array.
 
-```json
+```js
 {
   "jest": {
     "setupFiles": ["jest-date-mock"]
@@ -31,7 +31,7 @@ In your `package.json` under the `jest`, create a `setupFiles` array and add `je
 
 If you already have a `setupFiles` attribute you can also append `jest-date-mock` to the array.
 
-```json
+```js
 {
   "jest": {
     "setupFiles": ["./__setups__/other.js", "jest-date-mock"]
@@ -57,7 +57,7 @@ require('jest-date-mock');
 
 Add that file to your `setupFiles` array:
 
-```json
+```js
 "jest": {
   "setupFiles": [
     "./__setups__/date.js"
@@ -66,7 +66,9 @@ Add that file to your `setupFiles` array:
 ```
 
 
-## Usage case
+## Usage
+
+> Use the only `2 api` for test cases.
 
 ```js
 import { advance, reset } from 'jest-date-mock';
