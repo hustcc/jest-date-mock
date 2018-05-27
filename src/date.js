@@ -12,7 +12,7 @@ let nowDate = DEFAULT;
  * move date by offset `ms`
  * @param ms
  */
-export const advance = ms => nowDate += ms;
+export const advanceBy = ms => nowDate += ms;
 
 /**
  * reset Date
@@ -20,7 +20,7 @@ export const advance = ms => nowDate += ms;
  * @param ms
  * @returns {*}
  */
-export const reset = ms => nowDate = ms ? +new Date(ms) : DEFAULT;
+export const advanceTo = ms => nowDate = ms ? +new Date(ms) : DEFAULT;
 
 /**
  * current

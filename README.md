@@ -70,21 +70,21 @@ Add that file to your `setupFiles` array:
 
 > Use the only `2 api` for test cases.
 
- - `advance(ms)`: advance date timestamp by `ms`.
- - `reset([timestamp])`: reset date to `timestamp`, default to `0`.
+ - `advanceBy(ms)`: advance date timestamp by `ms`.
+ - `advanceTo([timestamp])`: reset date to `timestamp`, default to `0`.
 
 ```js
-import { advance, reset } from 'jest-date-mock';
+import { advanceBy, advanceTo } from 'jest-date-mock';
 
 test('usage', () => {
-  reset(new Date(2018, 5, 27, 0, 0, 0)); // reset to date time.
+  advanceTo(new Date(2018, 5, 27, 0, 0, 0)); // reset to date time.
 
   const now = Date.now();
 
-  advance(3000); // advance time 3 seconds
+  advanceBy(3000); // advance time 3 seconds
   expect(+new Date() - now).toBe(3000);
 
-  advance(-1000); // advance time -1 second
+  advanceBy(-1000); // advance time -1 second
   expect(+new Date() - now).toBe(2000);
 });
 ```

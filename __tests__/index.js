@@ -2,10 +2,11 @@
  * Created by hustcc 18/05/27.
  * Contract: i@hust.cc
  */
-import { advance, reset } from '../src';
+
+import { advanceBy, advanceTo } from '../src';
 
 beforeEach(() => {
-  reset(); // reset to 0 ms.
+  advanceTo(); // advanceTo to 0 ms.
 });
 
 describe('jest-date-mock', () => {
@@ -28,43 +29,43 @@ describe('jest-date-mock', () => {
     expect(new Date(Date.UTC(2018, 5, 27, 0, 0, 0)).getTime()).toBe(1530057600000);
   });
 
-  test('reset', () => {
-    reset(1000);
+  test('advanceTo', () => {
+    advanceTo(1000);
     expect(+new Date()).toBe(1000);
 
-    reset();
+    advanceTo();
     expect(+new Date()).toBe(0);
   });
 
-  test('advance', () => {
-    reset(1000);
-    advance(3000); // advance time 3 seconds
+  test('advanceBy', () => {
+    advanceTo(1000);
+    advanceBy(3000); // advanceBy time 3 seconds
     expect(+new Date()).toBe(4000);
 
-    advance(-4000); // advance time -4 seconds
+    advanceBy(-4000); // advanceBy time -4 seconds
     expect(+new Date()).toBe(0);
   });
 
   test('Date.now', () => {
-    reset(1000);
+    advanceTo(1000);
     expect(Date.now()).toBe(1000);
 
-    reset();
+    advanceTo();
     expect(Date.now()).toBe(0);
 
-    advance(520);
+    advanceBy(520);
     expect(Date.now()).toBe(520);
   });
 
   test('usage', () => {
-    reset(new Date(2018, 5, 27, 0, 0, 0)); // reset to date time.
+    advanceTo(new Date(2018, 5, 27, 0, 0, 0)); // advanceTo to date time.
 
     const now = Date.now();
 
-    advance(3000); // advance time 3 seconds
+    advanceBy(3000); // advanceBy time 3 seconds
     expect(+new Date() - now).toBe(3000);
 
-    advance(-1000); // advance time -1 second
+    advanceBy(-1000); // advanceBy time -1 second
     expect(+new Date() - now).toBe(2000);
   });
 });
