@@ -19,6 +19,8 @@ export const mockDateClass = D => {
 
   // original Date class
   MD.__OriginalDate__ = D;
+  // current() is for test.
+  MD.current = () => D.now();
 
   return MD;
 };

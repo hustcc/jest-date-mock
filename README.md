@@ -92,6 +92,19 @@ test('usage', () => {
 More sample code [here](__tests__).
 
 
+Also, add an API `Date.current()` to get the actual current timestamp.
+
+```js
+import { advanceBy, advanceTo } from 'jest-date-mock';
+
+advanceTo(0); // reset to timestamp = 0
+
+Date.now(); // will got 0
+
+Date.current(); // will got the actual timestamp.
+```
+
+
 ## License
 
 MIT@[hustcc](https://github.com/hustcc).

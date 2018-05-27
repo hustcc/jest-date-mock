@@ -29,6 +29,23 @@ describe('jest-date-mock', () => {
     expect(new Date(Date.UTC(2018, 5, 27, 0, 0, 0)).getTime()).toBe(1530057600000);
   });
 
+  test('Date.now', () => {
+    advanceTo(1000);
+    expect(Date.now()).toBe(1000);
+
+    advanceTo();
+    expect(Date.now()).toBe(0);
+
+    advanceBy(520);
+    expect(Date.now()).toBe(520);
+  });
+
+  test('Date.current', () => {
+    advanceTo();
+    expect(Date.now()).toBe(0);
+    expect(Date.current() - new Date('2018-05-20').getTime()).toBePositive();
+  });
+
   test('advanceTo', () => {
     advanceTo(1000);
     expect(+new Date()).toBe(1000);
@@ -44,17 +61,6 @@ describe('jest-date-mock', () => {
 
     advanceBy(-4000); // advanceBy time -4 seconds
     expect(+new Date()).toBe(0);
-  });
-
-  test('Date.now', () => {
-    advanceTo(1000);
-    expect(Date.now()).toBe(1000);
-
-    advanceTo();
-    expect(Date.now()).toBe(0);
-
-    advanceBy(520);
-    expect(Date.now()).toBe(520);
   });
 
   test('usage', () => {
