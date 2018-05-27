@@ -24,8 +24,8 @@ describe('jest-date-mock', () => {
     // instanceof
     expect(new Date() instanceof Date).toBe(true);
 
-    // 2018 05 27
-    expect(new Date(2018, 5, 27, 0, 0, 0).getTime()).toBe(1530028800000);
+    // 2018-05-27 08:00:00
+    expect(new Date(Date.UTC(2018, 5, 27, 0, 0, 0)).getTime()).toBe(1530057600000);
   });
 
   test('reset', () => {
