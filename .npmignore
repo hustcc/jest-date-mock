@@ -1,0 +1,9 @@
+.idea
+node_modules
+.DS_STORE
+coverage
+package-lock.json
+__tests__
+src
+.babelrc
+.travis.yml
