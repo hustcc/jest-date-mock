@@ -68,10 +68,11 @@ Add that file to your `setupFiles` array:
 
 ## Usage
 
-> Use the only `2 api` for test cases.
+> Use the only `3 api` for test cases.
 
  - `advanceBy(ms)`: advance date timestamp by `ms`.
  - `advanceTo([timestamp])`: reset date to `timestamp`, default to `0`.
+ - `clear()`: shut down the mock system.
 
 ```js
 import { advanceBy, advanceTo } from 'jest-date-mock';
@@ -86,6 +87,9 @@ test('usage', () => {
 
   advanceBy(-1000); // advance time -1 second
   expect(+new Date() - now).toBe(2000);
+
+  clear();
+  Date.now(); // will got current timestamp
 });
 ```
 
@@ -95,7 +99,7 @@ More sample code [here](__tests__).
 Also, add an API `Date.current()` to get the actual current timestamp.
 
 ```js
-import { advanceBy, advanceTo } from 'jest-date-mock';
+import { advanceBy, advanceTo, clear } from 'jest-date-mock';
 
 advanceTo(0); // reset to timestamp = 0
 

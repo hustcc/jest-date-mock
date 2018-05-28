@@ -3,7 +3,7 @@
  * Contract: i@hust.cc
  */
 
-export { advanceBy, advanceTo } from './date';
+export { advanceBy, advanceTo, clear } from './date';
 
 import { mockDateClass } from './mockDate';
 

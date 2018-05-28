@@ -3,12 +3,14 @@
  * Contract: i@hust.cc
  */
 
-import { advanceBy, advanceTo } from '../src';
+import { advanceBy, advanceTo, clear } from '../src';
 
 beforeEach(() => {
   advanceTo(); // advanceTo to 0 ms.
 });
-
+afterEach(() => {
+  clear();
+});
 describe('jest-date-mock', () => {
   test('Date Class', () => {
     // Date isEqual
@@ -60,6 +62,16 @@ describe('jest-date-mock', () => {
     expect(+new Date()).toBe(4000);
 
     advanceBy(-4000); // advanceBy time -4 seconds
+    expect(+new Date()).toBe(0);
+    advanceBy();
+    expect(+new Date()).toBe(0);
+  });
+
+  test('clear', () => {
+    clear();
+    expect(Date.now() - new Date('2018-05-20') > 0).toBe(true);
+
+    advanceTo();
     expect(+new Date()).toBe(0);
   });
 

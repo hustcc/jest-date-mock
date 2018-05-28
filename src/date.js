@@ -3,7 +3,7 @@
  * Contract: i@hust.cc
  */
 
-const DEFAULT = 0;
+const DEFAULT = undefined;
 
 // current Date of timestamp
 let nowDate = DEFAULT;
@@ -12,15 +12,21 @@ let nowDate = DEFAULT;
  * move date by offset `ms`
  * @param ms
  */
-export const advanceBy = ms => nowDate += ms;
+export const advanceBy = ms => nowDate += (ms || 0);
 
 /**
  * reset Date
- * if no parameter, then set to default
+ * if no parameter, then set to 0
  * @param ms
  * @returns {*}
  */
-export const advanceTo = ms => nowDate = ms ? +new Date(ms) : DEFAULT;
+export const advanceTo = ms => nowDate = ms ? +new Date(ms) : 0;
+
+/**
+ * clear mock
+ * @returns {undefined}
+ */
+export const clear = () => nowDate = DEFAULT;
 
 /**
  * current
