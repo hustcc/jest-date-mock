@@ -9,12 +9,9 @@ export const mockDateClass = D => {
   const mockNow = () => now() === undefined ? D.now() : now();
 
   const MD = function(...p) {
-    const d = new D(...(p.length === 0 ? [mockNow()] : p));
-
-    MD.prototype = D.prototype;
-
-    return d;
+    return new D(...(p.length === 0 ? [mockNow()] : p));
   };
+  MD.prototype = D.prototype;
 
   // undefined means do not mock date
   MD.now = () => mockNow();
