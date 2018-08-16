@@ -75,7 +75,7 @@ Add that file to your `setupFiles` array:
  - `clear()`: shut down the mock system.
 
 ```js
-import { advanceBy, advanceTo } from 'jest-date-mock';
+import { advanceBy, advanceTo, clear } from 'jest-date-mock';
 
 test('usage', () => {
   advanceTo(new Date(2018, 5, 27, 0, 0, 0)); // reset to date time.
