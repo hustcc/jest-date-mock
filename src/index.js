@@ -9,8 +9,11 @@ import { mockDateClass } from './mockDate';
 
 // mock Date class
 const dateClass = mockDateClass(Date);
+
 if (global.window) {
-    global.window.Date = dateClass;
+  // dom env
+  global.window.Date = dateClass;
 } else {
-    global.Date = dateClass;
+  // node / native env
+  global.Date = dateClass;
 }
