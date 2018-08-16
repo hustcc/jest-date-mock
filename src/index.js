@@ -8,4 +8,9 @@ export { advanceBy, advanceTo, clear } from './date';
 import { mockDateClass } from './mockDate';
 
 // mock Date class
-global.window.Date = mockDateClass(window.Date);
+const dateClass = mockDateClass(Date);
+if (global.window) {
+    global.window.Date = dateClass;
+} else {
+    global.Date = dateClass;
+}
