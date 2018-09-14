@@ -29,6 +29,12 @@ describe('jest-date-mock', () => {
 
     // 2018-05-27 08:00:00
     expect(new Date(Date.UTC(2018, 5, 27, 0, 0, 0)).getTime()).toBe(1530057600000);
+
+    class DerivedDate extends Date {}
+    const derivedDate = new DerivedDate();
+    expect(derivedDate).toBeInstanceOf(Date);
+    expect(derivedDate).toBeInstanceOf(DerivedDate);
+    expect(+derivedDate).toBe(0);
   });
 
   test('Date.now', () => {
