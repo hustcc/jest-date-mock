@@ -8,15 +8,17 @@ import { now } from './date';
 export const mockDateClass = D => {
   const mockNow = () => now() === undefined ? D.now() : now();
 
-  const MD = function(...p) {
-    return new D(...(p.length === 0 ? [mockNow()] : p));
-  };
-  MD.prototype = D.prototype;
+  function MD(date) {
+    const instance = new D(date === undefined ? mockNow() : date);
+    Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
+    return instance;
+  }
+
+  MD.prototype = Object.create(D.prototype);
+  Object.setPrototypeOf(MD, D);
 
   // undefined means do not mock date
   MD.now = () => mockNow();
-  MD.UTC = D.UTC;
-
   // original Date class
   MD.__OriginalDate__ = D;
   // current() is for test.
