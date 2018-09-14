@@ -8,8 +8,9 @@ import { now } from './date';
 export const mockDateClass = D => {
   const mockNow = () => now() === undefined ? D.now() : now();
 
-  function MD(date) {
-    const instance = new D(date === undefined ? mockNow() : date);
+  function MD(...args) {
+    const dateArgs = args.length === 0 ? [mockNow()] : args;
+    const instance = new D(...dateArgs);
     Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
     return instance;
   }
