@@ -90,7 +90,8 @@ describe('jest-date-mock', () => {
 
     const now = Date.now();
 
-    expect(now).toBe(1530028800000);
+    // 0 timezone +  timezone offset
+    expect(now).toBe(1530057600000  + new Date().getTimezoneOffset() * 60000);
 
     advanceBy(3000); // advanceBy time 3 seconds
     expect(+new Date() - now).toBe(3000);
