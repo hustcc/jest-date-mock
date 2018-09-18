@@ -21,7 +21,7 @@
     "timestamp"
   ],
   "author": "hustcc",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hustcc/jest-date-mock/issues"
   },
