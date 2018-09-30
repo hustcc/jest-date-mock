@@ -7,12 +7,12 @@
 export declare function advanceBy(ms: number): void;
 
 /**
- * Sets date to a timestamp.
+ * Sets date to a timestamp or Date.
  *
  * @param ms
  * @default 0
  */
-export declare function advanceTo(ms?: number): void;
+export declare function advanceTo(ms?: number | Date): void;
 
 /**
  * Un-mocks the Date class.
