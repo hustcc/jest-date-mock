@@ -3,7 +3,8 @@
  * Contract: i@hust.cc
  */
 
-import { advanceBy, advanceTo, clear } from '../src';
+import { advanceBy, advanceTo, clear, version } from '../src';
+import pkg from '../package.json';
 
 beforeEach(() => {
   advanceTo(); // advanceTo to 0 ms.
@@ -98,5 +99,9 @@ describe('jest-date-mock', () => {
 
     advanceBy(-1000); // advanceBy time -1 second
     expect(+new Date() - now).toBe(2000);
+  });
+
+  test('version', () => {
+    expect(version).toBe(pkg.version);
   });
 });

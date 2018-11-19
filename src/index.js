@@ -17,3 +17,5 @@ if (global.window) {
   // node / native env
   global.Date = dateClass;
 }
+
+export const version = __VERSION__;
