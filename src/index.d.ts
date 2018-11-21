@@ -18,3 +18,8 @@ export declare function advanceTo(ms?: number | Date): void;
  * Un-mocks the Date class.
  */
 export declare function clear(): void;
+
+/**
+ * Package version.
+ */
+export declare const version: string;
