@@ -1,11 +1,11 @@
 {
   "name": "jest-date-mock",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Mock `window.Date` when run unit test cases with jest. Make tests of `Date` easier.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
     "build": "babel src --out-dir lib --copy-files && npm run test",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },

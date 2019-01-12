@@ -6,6 +6,7 @@
 import { now } from './date';
 
 export const mockDateClass = D => {
+  // if undefined, use real date, or else mock date
   const mockNow = () => now() === undefined ? D.now() : now();
 
   function MD(...args) {

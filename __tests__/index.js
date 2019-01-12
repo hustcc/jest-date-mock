@@ -6,14 +6,12 @@
 import { advanceBy, advanceTo, clear, version } from '../src';
 import pkg from '../package.json';
 
-beforeEach(() => {
-  advanceTo(); // advanceTo to 0 ms.
-});
 afterEach(() => {
   clear();
 });
 describe('jest-date-mock', () => {
   test('Date Class', () => {
+    advanceTo();
     // Date isEqual
     expect(new Date()).toEqual(new Date(0));
 
@@ -68,14 +66,15 @@ describe('jest-date-mock', () => {
   });
 
   test('advanceBy', () => {
-    advanceTo(1000);
     advanceBy(3000); // advanceBy time 3 seconds
-    expect(+new Date()).toBe(4000);
+    const now = new Date();
+    advanceBy(4000);
+    expect(+new Date() - now).toBe(4000);
 
     advanceBy(-4000); // advanceBy time -4 seconds
-    expect(+new Date()).toBe(0);
+    expect(+new Date() - now).toBe(0);
     advanceBy();
-    expect(+new Date()).toBe(0);
+    expect(+new Date() - now).toBe(0);
   });
 
   test('clear', () => {

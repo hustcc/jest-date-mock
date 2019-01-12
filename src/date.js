@@ -3,6 +3,7 @@
  * Contract: i@hust.cc
  */
 
+// undefined means unmock.
 const DEFAULT = undefined;
 
 // current Date of timestamp
@@ -12,7 +13,7 @@ let nowDate = DEFAULT;
  * move date by offset `ms`
  * @param ms
  */
-export const advanceBy = ms => nowDate += (ms || 0);
+export const advanceBy = ms => nowDate = (nowDate === undefined ? +new Date() : nowDate) + (ms || 0);
 
 /**
  * reset Date
