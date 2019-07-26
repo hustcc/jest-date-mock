@@ -1,6 +1,6 @@
 # jest-date-mock
 
-> Mock `window.Date` when run unit test cases with jest. Make tests of `Date` easier.
+> Mock `Date` when run unit test cases with jest. Make tests of `Date` easier.
 
 [![Build Status](https://travis-ci.org/hustcc/jest-date-mock.svg?branch=master)](https://travis-ci.org/hustcc/jest-date-mock)
 [![Coverage Status](https://coveralls.io/repos/github/hustcc/jest-date-mock/badge.svg?branch=master)](https://coveralls.io/github/hustcc/jest-date-mock)
