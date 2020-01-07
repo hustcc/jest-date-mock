@@ -9,22 +9,22 @@ export const mockDateClass = D => {
   // if undefined, use real date, or else mock date
   const mockNow = () => now() === undefined ? D.now() : now();
 
-  function MD(...args) {
+  function Date(...args) {
     const dateArgs = args.length === 0 ? [mockNow()] : args;
     const instance = new D(...dateArgs);
     Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
     return instance;
   }
 
-  MD.prototype = Object.create(D.prototype);
-  Object.setPrototypeOf(MD, D);
+  Date.prototype = Object.create(D.prototype);
+  Object.setPrototypeOf(Date, D);
 
   // undefined means do not mock date
-  MD.now = () => mockNow();
+  Date.now = () => mockNow();
   // original Date class
-  MD.__OriginalDate__ = D;
+  Date.__OriginalDate__ = D;
   // current() is for test.
-  MD.current = () => D.now();
+  Date.current = () => D.now();
 
-  return MD;
+  return Date;
 };

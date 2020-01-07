@@ -38,6 +38,8 @@ describe('jest-date-mock', () => {
     expect(+derivedDate).toBe(0);
 
     expect(new Date()).not.toBe(new Date());
+
+    expect(Date.name).toBe('Date');
   });
 
   test('Date.now', () => {
