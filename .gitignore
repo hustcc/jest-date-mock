@@ -5,3 +5,4 @@ coverage
 package-lock.json
 lib
 yarn.lock
+yarn-error.log
