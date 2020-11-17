@@ -13,9 +13,11 @@ const dateClass = mockDateClass(Date);
 if (global.window) {
   // dom env
   global.window.Date = dateClass;
+  global.window.performance.now = function() { return dateClass.now(); };
 } else {
   // node / native env
   global.Date = dateClass;
+  require('perf_hooks').performance.now = function() { return dateClass.now(); };
 }
 
 export const version = __VERSION__;
