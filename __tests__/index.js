@@ -25,6 +25,7 @@ describe('jest-date-mock', () => {
 
     // instanceof
     expect(new Date()).toBeInstanceOf(Date);
+    expect(new Date().constructor(10000)).toBeInstanceOf(Date);
 
     // 2018-05-27 08:00:00
     expect(new Date(Date.UTC(2018, 5, 27, 0, 0, 0)).getTime()).toBe(1530057600000);
