@@ -15,9 +15,16 @@ describe('jest-date-mock', () => {
     // Date isEqual
     expect(new Date()).toEqual(new Date(0));
 
+    // .constructor()
+    expect(+new Date(1000).constructor()).toBe(0);
+    expect(+new Date().constructor(10000)).toBe(10000);
+    expect(new Date().constructor(10000)).toBeInstanceOf(Date);
+
+
     // +
     expect(+new Date()).toBe(0);
     expect(+new Date(10000)).toBe(10000);
+
 
     // getTime
     expect(new Date().getTime()).toBe(0);
@@ -92,6 +99,9 @@ describe('jest-date-mock', () => {
     expect(+new Date() - now).toBe(0);
     advanceBy();
     expect(+new Date() - now).toBe(0);
+
+    advanceBy(3000);
+    expect(+new Date().constructor() - now).toBe(3000); // .constructor()
   });
 
   test('clear', () => {
@@ -100,6 +110,7 @@ describe('jest-date-mock', () => {
 
     advanceTo();
     expect(+new Date()).toBe(0);
+    expect(+new Date().constructor()).toBe(0);
   });
 
   test('usage', () => {
