@@ -2,7 +2,7 @@
 
 > Mock `Date` when run unit test cases with jest. Make tests of `Date` easier.
 
-[![Build Status](https://travis-ci.org/hustcc/jest-date-mock.svg?branch=master)](https://travis-ci.org/hustcc/jest-date-mock)
+[![Build Status](https://github.com/hustcc/jest-date-mock/workflows/build/badge.svg)](https://github.com/hustcc/jest-date-mock/actions)
 [![Coverage Status](https://coveralls.io/repos/github/hustcc/jest-date-mock/badge.svg?branch=master)](https://coveralls.io/github/hustcc/jest-date-mock)
 [![npm](https://img.shields.io/npm/v/jest-date-mock.svg)](https://www.npmjs.com/package/jest-date-mock)
 [![npm](https://img.shields.io/npm/dm/jest-date-mock.svg)](https://www.npmjs.com/package/jest-date-mock)

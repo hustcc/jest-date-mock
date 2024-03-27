@@ -6,4 +6,3 @@ package-lock.json
 __tests__
 src
 .babelrc
-.travis.yml
