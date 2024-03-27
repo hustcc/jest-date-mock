@@ -13,6 +13,7 @@ export const mockDateClass = D => {
     const dateArgs = args.length === 0 ? [mockNow()] : args;
     const instance = new D(...dateArgs);
     Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
+    instance.constructor = Date;
     return instance;
   }
 
