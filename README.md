@@ -1,6 +1,8 @@
 # jest-date-mock
 
 > Mock `Date` when run unit test cases with jest. Make tests of `Date` easier.
+> - [jest-random-mock](https://github.com/hustcc/jest-random-mock) Mock `Math.random` in jest, with deterministic random generator.
+> - [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) Mock `canvas` when run unit test cases with jest.
 
 [![Build Status](https://github.com/hustcc/jest-date-mock/workflows/build/badge.svg)](https://github.com/hustcc/jest-date-mock/actions)
 [![Coverage Status](https://coveralls.io/repos/github/hustcc/jest-date-mock/badge.svg?branch=master)](https://coveralls.io/github/hustcc/jest-date-mock)
