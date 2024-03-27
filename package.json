@@ -6,8 +6,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "jest --no-cache",
-    "build": "babel src --out-dir lib --copy-files && npm run test",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "build": "babel src --out-dir lib --copy-files && npm run test"
   },
   "repository": {
     "type": "git",
@@ -33,7 +32,6 @@
     "@babel/preset-env": "^7.7.7",
     "babel-jest": "^24.9.0",
     "babel-plugin-version": "^0.2.2",
-    "coveralls": "^3.0.0",
     "jest": "^24.9.0"
   },
   "jest": {
