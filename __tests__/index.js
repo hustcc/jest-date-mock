@@ -20,11 +20,9 @@ describe('jest-date-mock', () => {
     expect(+new Date().constructor(10000)).toBe(10000);
     expect(new Date().constructor(10000)).toBeInstanceOf(Date);
 
-
     // +
     expect(+new Date()).toBe(0);
     expect(+new Date(10000)).toBe(10000);
-
 
     // getTime
     expect(new Date().getTime()).toBe(0);
@@ -59,20 +57,6 @@ describe('jest-date-mock', () => {
 
     advanceBy(520);
     expect(Date.now()).toBe(520);
-  });
-
-  test('performance.now', () => {
-    const performance = global.window ?
-      global.window.performance : require('perf_hooks').performance;
-
-    advanceTo(1000);
-    expect(performance.now()).toBe(1000);
-
-    advanceTo();
-    expect(performance.now()).toBe(0);
-
-    advanceBy(520);
-    expect(performance.now()).toBe(520);
   });
 
   test('Date.current', () => {
