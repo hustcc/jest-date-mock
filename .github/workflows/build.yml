@@ -16,7 +16,14 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: [11, 12, 13, 14, 15, 16, 17, 18]
+          node-version:
+            - 12
+            - 13
+            - 14
+            - 15
+            - 16
+            - 17
+            - 18
 
       - name: Install Dependencies
         run: npm install
